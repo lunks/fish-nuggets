@@ -12,8 +12,8 @@ function cd --description "Change working directory"
         end
         break
       else
-        if test -f "$cwd/.rvmrc"
-          . "$cwd/.rvmrc"
+        if test -s ".rvmrc"
+          eval "rvm reload" > /dev/null
           break
         else
           set cwd (dirname "$cwd")
