@@ -12,7 +12,7 @@ function cd --description "Change working directory"
         end
         break
       else
-        if test -s ".rvmrc"
+        if test -s ".rvmrc"; or test -s ".ruby-version"; or test -s ".ruby-gemset"
           eval "rvm reload" > /dev/null
           break
         else
